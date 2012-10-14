@@ -6,6 +6,8 @@
 //  Copyright 2010 Werner IT Consultancy. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "WEPopoverContainerView.h"
 
 @implementation WEPopoverContainerViewProperties
@@ -56,6 +58,7 @@ permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
 		
 		self.clipsToBounds = YES;
 		self.userInteractionEnabled = YES;
+        self.backgroundColor = [UIColor clearColor];
 	}
 	return self;
 }

@@ -6,6 +6,8 @@
 //  Copyright 2010 Werner IT Consultancy. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "WEPopoverController.h"
 #import "WEPopoverParentView.h"
 #import "UIBarButtonItem+WEPopover.h"
@@ -64,6 +66,9 @@
 		[contentViewController release];
 		contentViewController = [vc retain];
 		popoverContentSize = CGSizeZero;
+        
+        contentViewController.view.layer.shadowOffset = CGSizeMake(10, 0);
+        contentViewController.view.layer.shadowRadius = 3.0;
 	}
 }
 
@@ -350,8 +355,8 @@
 	
 	CGSize imageSize = CGSizeMake(30.0f, 30.0f);
 	NSString *bgImageName = @"popoverBgSimple.png";
-	CGFloat bgMargin = 6.0;
-	CGFloat contentMargin = 2.0;
+	CGFloat bgMargin = 5.0;
+	CGFloat contentMargin = 0.0;
 	
 	ret.leftBgMargin = bgMargin;
 	ret.rightBgMargin = bgMargin;
